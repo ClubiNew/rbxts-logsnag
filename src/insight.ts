@@ -1,4 +1,4 @@
-import { API } from "./api";
+import type { API } from "./api";
 
 export class Insight {
     constructor(
