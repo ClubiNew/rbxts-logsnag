@@ -1,3 +1,2 @@
-export function makeHello(name: string) {
-    return `Hello from ${name}!`;
-}
+export * from "./logsnag";
+export * from "./types";
