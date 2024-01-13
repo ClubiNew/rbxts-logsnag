@@ -6,7 +6,8 @@
     "scripts": {
         "build": "rbxtsc",
         "watch": "rbxtsc -w",
-        "prepublishOnly": "yarn run build"
+        "prepublishOnly": "yarn run build",
+        "lint": "yarn eslint --max-warnings 0 ./src"
     },
     "types": "out/index.d.ts",
     "files": [
