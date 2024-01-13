@@ -8,5 +8,11 @@ export class Channel {
     ) {}
 
     /** @see https://docs.logsnag.com/api-reference/log */
-    public log(event: string, options: EventOptions) {}
+    public log(event: string, options: EventOptions) {
+        return this.api.post("log", {
+            channel: this.name,
+            event,
+            ...options,
+        });
+    }
 }
