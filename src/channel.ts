@@ -8,11 +8,13 @@ export class Channel {
     ) {}
 
     /** @see https://docs.logsnag.com/api-reference/log */
-    public log(event: string, options: EventOptions) {
-        return this.api.post("log", {
-            channel: this.name,
-            event,
-            ...options,
-        });
+    public log(event: string, options?: EventOptions) {
+        return API.checkKebabCase(options?.tags).then(() =>
+            this.api.post("log", {
+                channel: this.name,
+                event,
+                ...options,
+            }),
+        );
     }
 }

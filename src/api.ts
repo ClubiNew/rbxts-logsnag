@@ -15,6 +15,15 @@ export class API {
         private readonly project: string,
     ) {}
 
+    public static checkKebabCase(record: Record<string, unknown> = {}): Promise<unknown> {
+        for (const [key] of pairs(record)) {
+            if (!string.split(key, "-").every((part) => string.match(part, "^%l+$") !== undefined)) {
+                return Promise.reject(`All tag and property keys must be in kebab-case, got "${key}"`);
+            }
+        }
+        return Promise.resolve();
+    }
+
     public post(endpoint: string, body: object) {
         return this.request("POST", endpoint, body);
     }

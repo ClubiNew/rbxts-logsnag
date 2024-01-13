@@ -20,9 +20,11 @@ export class LogSnag {
 
     /** @see https://docs.logsnag.com/api-reference/identify */
     public identify(userId: string, properties: UserProperties) {
-        return this.api.post("identify", {
-            user_id: userId,
-            properties,
-        });
+        return API.checkKebabCase(properties).then(() =>
+            this.api.post("identify", {
+                user_id: userId,
+                properties,
+            }),
+        );
     }
 }
