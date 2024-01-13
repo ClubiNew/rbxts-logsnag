@@ -1,8 +1,9 @@
-import type { EventOptions, LogSnagOptions } from "./types";
+import type { EventOptions } from "./types";
+import { API } from "./api";
 
 export class Channel {
     constructor(
-        private readonly options: LogSnagOptions,
+        private readonly api: API,
         private readonly name: string,
     ) {}
 

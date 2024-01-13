@@ -1,8 +1,8 @@
-import type { LogSnagOptions } from "./types";
+import { API } from "./api";
 
 export class Insight {
     constructor(
-        private readonly options: LogSnagOptions,
+        private readonly api: API,
         private readonly name: string,
         private readonly defaultEmoji?: string,
     ) {}

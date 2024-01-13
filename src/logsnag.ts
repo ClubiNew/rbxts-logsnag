@@ -1,16 +1,21 @@
 import type { LogSnagOptions, UserProperties } from "./types";
 import { Channel } from "./channel";
 import { Insight } from "./insight";
+import { API } from "./api";
 
 export class LogSnag {
-    constructor(private readonly options: LogSnagOptions) {}
+    private readonly api: API;
+
+    constructor(options: LogSnagOptions) {
+        this.api = new API(options.token, options.project);
+    }
 
     public getChannel(name: string): Channel {
-        return new Channel(this.options, name);
+        return new Channel(this.api, name);
     }
 
     public getInsight(name: string): Insight {
-        return new Insight(this.options, name);
+        return new Insight(this.api, name);
     }
 
     /** @see https://docs.logsnag.com/api-reference/identify */
