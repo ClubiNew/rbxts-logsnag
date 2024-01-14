@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "rbxtsc",
-        "watch": "rbxtsc -w",
+        "dev": "rbxtsc -w --type game",
         "prepublishOnly": "yarn run build",
         "lint": "yarn eslint --max-warnings 0 ./src"
     },
@@ -17,6 +17,7 @@
     "types": "out/index.d.ts",
     "files": [
         "out",
+        "!**/*.spec.*",
         "!**/*.tsbuildinfo"
     ],
     "publishConfig": {
@@ -25,6 +26,7 @@
     "devDependencies": {
         "@rbxts/compiler-types": "^2.2.0-types.0",
         "@rbxts/services": "^1.5.1",
+        "@rbxts/testez": "^0.4.2-ts.0",
         "@rbxts/types": "^1.0.738",
         "@typescript-eslint/eslint-plugin": "^6.18.1",
         "@typescript-eslint/parser": "^6.18.1",
