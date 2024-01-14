@@ -17,7 +17,7 @@
                     }
                 }
             },
-            "TS": {
+            "rbxts-logsnag": {
                 "$path": "out"
             }
         },

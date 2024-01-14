@@ -11,9 +11,17 @@
         "lint": "yarn eslint --max-warnings 0 ./src",
         "docs": "yarn typedoc"
     },
+    "keywords": [
+        "roblox-ts",
+        "logsnag",
+        "sdk"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/ClubiNew/rbxts-logsnag"
+    },
+    "bugs": {
+        "url": "https://github.com/ClubiNew/rbxts-logsnag/issues"
     },
     "types": "out/index.d.ts",
     "files": [
@@ -26,7 +34,6 @@
     },
     "devDependencies": {
         "@rbxts/compiler-types": "^2.2.0-types.0",
-        "@rbxts/services": "^1.5.1",
         "@rbxts/testez": "^0.4.2-ts.0",
         "@rbxts/types": "^1.0.738",
         "@typescript-eslint/eslint-plugin": "^6.18.1",
@@ -45,5 +52,8 @@
         "typedoc-plugin-merge-modules": "^5.1.0",
         "typedoc-plugin-replace-text": "^3.2.0",
         "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "@rbxts/services": "^1.5.1"
     }
 }
