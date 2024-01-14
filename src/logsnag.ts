@@ -16,9 +16,12 @@ export class LogSnag {
         return new Channel(this.api, name);
     }
 
-    /** @returns An {@link Insight} with the given name. */
-    public getInsight(title: string): Insight {
-        return new Insight(this.api, title);
+    /**
+     * @param defaultIcon The default emoji to use when updating the insight.
+     * @returns An {@link Insight} with the given title.
+     */
+    public getInsight(title: string, defaultIcon?: string): Insight {
+        return new Insight(this.api, title, defaultIcon);
     }
 
     /**

@@ -9,7 +9,7 @@ export class Insight {
     constructor(
         private readonly api: API,
         private readonly title: string,
-        private readonly defaultEmoji?: string,
+        private readonly defaultIcon?: string,
     ) {}
 
     /** @returns The title of the insight. */
@@ -22,10 +22,10 @@ export class Insight {
      * @see https://docs.logsnag.com/api-reference/insight
      * @returns A promise that resolves if the request succeeds, or rejects with an error message.
      */
-    public set(value: string | number, emoji?: string) {
+    public set(value: string | number, icon?: string) {
         return this.api.post("insight", {
             title: this.title,
-            emoji: emoji ?? this.defaultEmoji,
+            icon: icon ?? this.defaultIcon,
             value,
         });
     }
@@ -35,10 +35,10 @@ export class Insight {
      * @see https://docs.logsnag.com/api-reference/insight-mutate
      * @returns A promise that resolves if the request succeeds, or rejects with an error message.
      */
-    public increment(amount: number, emoji?: string) {
+    public increment(amount: number, icon?: string) {
         return this.api.patch("insight", {
             title: this.title,
-            emoji: emoji ?? this.defaultEmoji,
+            icon: icon ?? this.defaultIcon,
             value: { $inc: amount },
         });
     }
