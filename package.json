@@ -8,7 +8,8 @@
         "build": "rbxtsc",
         "watch": "rbxtsc -w",
         "prepublishOnly": "yarn run build",
-        "lint": "yarn eslint --max-warnings 0 ./src"
+        "lint": "yarn eslint --max-warnings 0 ./src",
+        "docs": "yarn typedoc"
     },
     "repository": {
         "type": "git",
