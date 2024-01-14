@@ -1,5 +1,6 @@
 /node_modules
-/out
 /include
+/out
+/docs
 *.tsbuildinfo
 .DS_Store

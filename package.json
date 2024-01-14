@@ -34,6 +34,12 @@
         "eslint-plugin-roblox-ts": "^0.0.36",
         "prettier": "^3.2.1",
         "roblox-ts": "^2.2.0",
+        "typedoc": "^0.25.7",
+        "typedoc-material-theme": "^1.0.2",
+        "typedoc-plugin-coverage": "^2.2.0",
+        "typedoc-plugin-extras": "^3.0.0",
+        "typedoc-plugin-merge-modules": "^5.1.0",
+        "typedoc-plugin-replace-text": "^3.2.0",
         "typescript": "^5.3.3"
     }
 }

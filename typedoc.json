@@ -1,0 +1,30 @@
+{
+    "entryPoints": ["./src"],
+    "entryPointStrategy": "expand",
+
+    "plugin": [
+        "typedoc-material-theme",
+        "typedoc-plugin-extras",
+        "typedoc-plugin-merge-modules",
+        "typedoc-plugin-replace-text",
+        "typedoc-plugin-coverage"
+    ],
+
+    "visibilityFilters": {},
+    "excludePrivate": true,
+    "excludeExternals": true,
+    "excludeInternal": true,
+
+    "sourceLinkExternal": true,
+    "coverageLabel": "typedoc",
+    "favicon": "./favicon.svg",
+
+    "replaceText": {
+        "replacements": [
+            {
+                "pattern": "https://clubinew\\.github\\.io/rbxts-logsnag/*",
+                "replace": "./",
+            },
+        ],
+    },
+}
