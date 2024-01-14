@@ -1,3 +1,4 @@
+/** @see https://docs.logsnag.com/api-reference/identify */
 export type UserProperties = Record<string, string | number | boolean>;
 
 export interface LogSnagOptions {
@@ -8,12 +9,12 @@ export interface LogSnagOptions {
 }
 
 /** @see https://docs.logsnag.com/api-reference/log */
-export type EventOptions = Partial<{
-    user_id: string;
-    description: string;
-    icon: string;
-    notify: boolean;
-    tags: Record<string, string | number | boolean>;
-    parser: "markdown" | "text";
-    timestamp: number;
-}>;
+export interface EventOptions {
+    user_id?: string;
+    description?: string;
+    icon?: string;
+    notify?: boolean;
+    tags?: Record<string, string | number | boolean>;
+    parser?: "markdown" | "text";
+    timestamp?: number;
+}

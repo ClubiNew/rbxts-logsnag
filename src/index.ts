@@ -1,2 +1,2 @@
-export * from "./logsnag";
 export type * from "./types";
+export * from "./logsnag";

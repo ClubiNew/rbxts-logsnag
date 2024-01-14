@@ -9,12 +9,17 @@ interface Response {
     };
 }
 
+/** @internal */
 export class API {
     constructor(
         private readonly token: string,
         private readonly project: string,
     ) {}
 
+    /**
+     * Ensures all keys in the record are in kebab-case.
+     * @returns A promise that resolves if all keys are in kebab-case, or rejects with an error message.
+     */
     public static checkKebabCase(record: Record<string, unknown> = {}): Promise<unknown> {
         for (const [key] of pairs(record)) {
             if (!string.split(key, "-").every((part) => string.match(part, "^%l+$") !== undefined)) {
@@ -33,6 +38,7 @@ export class API {
     }
 
     private request(method: Method, endpoint: string, requestBody: object): Promise<void> {
+        // attempt to encode and send the request
         return Promise.try(() => {
             const requestJson = HttpService.JSONEncode({
                 project: this.project,
@@ -53,14 +59,18 @@ export class API {
                 return Promise.reject(`HTTP Error ${response.StatusCode}: ${response.StatusMessage}`);
             }
 
+            // parse the response
             return Promise.try(() => {
                 return HttpService.JSONDecode(response.Body) as Response;
             }).then((responseBody) => {
+                // all responses are status 200, so we need to check for an error message manually
                 if (responseBody.message === undefined) {
                     return Promise.resolve();
                 } else if (responseBody.message !== "Validation Error") {
                     return Promise.reject(responseBody.message);
                 }
+
+                // for validation errors, we can provide a more detailed error message
 
                 const validationErrors = new Array<string>();
 
