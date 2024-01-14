@@ -12,6 +12,11 @@ export class Channel {
         private readonly name: string,
     ) {}
 
+    /** @returns The name of the channel. */
+    public getName() {
+        return this.name;
+    }
+
     /**
      * Publishes a new event in the channel.
      * @see https://docs.logsnag.com/api-reference/log

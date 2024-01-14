@@ -8,9 +8,14 @@ export class Insight {
     /** @internal */
     constructor(
         private readonly api: API,
-        private readonly name: string,
+        private readonly title: string,
         private readonly defaultEmoji?: string,
     ) {}
+
+    /** @returns The title of the insight. */
+    public getTitle() {
+        return this.title;
+    }
 
     /**
      * Sets a new value for the insight.
@@ -19,7 +24,7 @@ export class Insight {
      */
     public set(value: string | number, emoji?: string) {
         return this.api.post("insight", {
-            title: this.name,
+            title: this.title,
             emoji: emoji ?? this.defaultEmoji,
             value,
         });
@@ -32,7 +37,7 @@ export class Insight {
      */
     public increment(amount: number, emoji?: string) {
         return this.api.patch("insight", {
-            title: this.name,
+            title: this.title,
             emoji: emoji ?? this.defaultEmoji,
             value: { $inc: amount },
         });

@@ -17,8 +17,8 @@ export class LogSnag {
     }
 
     /** @returns An {@link Insight} with the given name. */
-    public getInsight(name: string): Insight {
-        return new Insight(this.api, name);
+    public getInsight(title: string): Insight {
+        return new Insight(this.api, title);
     }
 
     /**
