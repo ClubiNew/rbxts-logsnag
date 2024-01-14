@@ -1,6 +1,6 @@
 {
     "name": "@rbxts/logsnag",
-    "version": "1.0.0-beta.2",
+    "version": "1.0.0-beta.3",
     "description": "LogSnag SDK for roblox-ts",
     "main": "out/init.lua",
     "license": "MIT",
