@@ -28,6 +28,7 @@ export class Insight {
     /**
      * Mutates the current value of the insight with the given increment or decrement.
      * @see https://docs.logsnag.com/api-reference/insight-mutate
+     * @returns A promise that resolves if the request succeeds, or rejects with an error message.
      */
     public increment(amount: number, emoji?: string) {
         return this.api.patch("insight", {
