@@ -85,7 +85,7 @@ export class API {
                     });
 
                     return Promise.reject(
-                        `Found ${validationErrors.size()} validation error(s):\n\t- ${validationErrors.join("\n\t- ")}`,
+                        `Found ${validationErrors.size()} validation error${validationErrors.size() === 1 ? "" : "s"}:\n\t- ${validationErrors.join("\n\t- ")}`,
                     );
                 },
                 () => {
