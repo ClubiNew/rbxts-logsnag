@@ -1,4 +1,4 @@
-[![CI](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/ci.yml/badge.svg)](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/ci.yml) [![CD](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/cd.yml/badge.svg)](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/cd.yml) [![docs](https://clubinew.github.io/rbxts-logsnag/coverage.svg)](https://clubinew.github.io/rbxts-logsnag)
+[![CI](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/ci.yml/badge.svg)](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/ci.yml) [![CD](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/cd.yml/badge.svg)](https://github.com/ClubiNew/rbxts-logsnag/actions/workflows/cd.yml) [![docs](https://clubinew.github.io/rbxts-logsnag/coverage.svg)](https://clubinew.github.io/rbxts-logsnag) [![npm](https://img.shields.io/npm/v/%40rbxts%2Flogsnag)](https://www.npmjs.com/package/@rbxts/logsnag)
 
 [LogSnag](https://logsnag.com/) is a SaaS for event logging and monitoring. This package provides a brief SDK over the [LogSnag API](https://docs.logsnag.com/).
 
